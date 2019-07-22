@@ -1,0 +1,17 @@
+#whale-title {
+    background-image: linear-gradient(to right, darkcyan, skyblue);
+    color: whitesmoke;
+    font-size: 2em
+}
+
+#l1_cell {
+    background: rgb(249, 247, 249);
+    
+    height: 20vh;
+    
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    
+    margin: 1%;
+    padding: 5%;
+}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to Whale.{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <span class="col-lg-12 text-center" id="whale-title">whale</span>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6" id="l_column">
+                <div class="row" id="l1_cell">
+                    
+                </div>
+            </div>
+            <div class="col-md-6 text-center " id="r_column">
+                <div class="row" id="r1_cell">
+                    Hello
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
