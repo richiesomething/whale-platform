@@ -1,2 +1,5 @@
 flask
-SQLAlchemy
+flask_login
+sqlalchemy
+pymysql
+
