@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5611f716-dde8-40b3-9a12-02724e77afe4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/dev_drop_all.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/dev_gen_test_records.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Agrandir-Regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/account-create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/account-login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/whale.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/whale.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +154,7 @@
       <workItem from="1564064726371" duration="783000" />
       <workItem from="1564132491546" duration="480000" />
       <workItem from="1564209766899" duration="479000" />
-      <workItem from="1564309668101" duration="7723000" />
+      <workItem from="1564309668101" duration="8006000" />
     </task>
     <servers />
   </component>
