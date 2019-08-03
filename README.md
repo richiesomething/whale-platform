@@ -1,4 +1,4 @@
-# whale-platform
+This is the gaming graphics platform, not the platform for the company
 
 ## Infrastructure
 - MySQL DB on the backend; see `db/` for init scripts + Python module interface.
