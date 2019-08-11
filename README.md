@@ -10,3 +10,11 @@ Please speak to @Thundersnail before changing any database stuff.
 
 ## Demo
 - See Slack #gamedevelopment group chat.
+
+
+##instruction
+from terminal in 1 directory up run: 
+python3
+>>> export FLASK_APP=appName
+>>> export FLASK_DEBUG=1
+>>> flask run
