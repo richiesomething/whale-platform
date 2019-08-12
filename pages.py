@@ -4,22 +4,22 @@ from flask_login import login_user, login_required, current_user, logout_user
 from models import User
 from server import db
 
-pages = Blueprint('pages', __name__)
+flask_app = Blueprint('flask_app', __name__)
 
-@pages.route('/')
+@flask_app.route('/')
 def index():
     return render_template('index.html')
 
-@pages.route('/profile')
+@flask_app.route('/profile')
 @login_required
 def profile():
     return render_template('profile.html', name=current_user.name)
 
-@pages.route('/login')
+@flask_app.route('/login')
 def login():
     return render_template('login.html')
 
-@pages.route('/login', methods=['POST'])
+@flask_app.route('/login', methods=['POST'])
 def login_post():
     email=request.form.get('email')
     password=request.form.get('password')
@@ -29,16 +29,16 @@ def login_post():
 
     if not user or not check_password_hash(user.password, password):
         flash('Email or Password is incorrect')
-        return redirect(url_for('pages.login'))
+        return redirect(url_for('flask_app.login'))
 
     login_user(user, remember=remember)
-    return redirect(url_for('pages.profile'))
+    return redirect(url_for('flask_app.profile'))
 
-@pages.route('/signup')
+@flask_app.route('/signup')
 def signup():
     return render_template('signup.html')
 
-@pages.route('/signup', methods=['POST'])
+@flask_app.route('/signup', methods=['POST'])
 def signup_post():
     email = request.form.get('email')
     name = request.form.get('name')
@@ -47,16 +47,16 @@ def signup_post():
     user = User.query.filter_by(email=email).first()
     if user:
         flash('Email address already exists.')
-        return redirect(url_for('pages.signup'))
+        return redirect(url_for('flask_app.signup'))
 
     new_user = User(email=email, name=name, password=generate_password_hash(password, method='sha256'))
     db.session.add(new_user)
     db.session.commit()
 
-    return redirect(url_for('pages.login'))
+    return redirect(url_for('flask_app.login'))
 
-@pages.route('/logout')
+@flask_app.route('/logout')
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('pages.index'))
+    return redirect(url_for('flask_app.index'))

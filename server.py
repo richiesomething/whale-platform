@@ -21,8 +21,8 @@ def create_app():
     def load_user(user_id):
         return User.query.get(int(user_id))
 
-    from pages import pages as pagesBlueprint
-    app.register_blueprint(pagesBlueprint)
+    from pages import flask_app as flask_app_pages
+    app.register_blueprint(flask_app_pages)
 
     return app
 
