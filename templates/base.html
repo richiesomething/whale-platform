@@ -10,7 +10,8 @@
 
 <body>
 <header>
-    <nav class="navbar">
+    {% block header %}{% endblock %}
+    <nav class="navbar" style="float: right">
 
         <a href="{{ url_for('flask_app.index') }}" class="navbar-item"> Home
             {% if current_user.is_authenticated %} :{{ name }} {% endif %}
@@ -36,6 +37,7 @@
 </header>
 
 <div class="content">
+    <br><br><br><br>
     {% block body %}
     {% endblock %}
 </div>
