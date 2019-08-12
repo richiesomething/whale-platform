@@ -40,5 +40,3 @@ if __name__ == '__main__':
         session.commit()
         print(repr(user))
     db_test_main()
-
-# test
