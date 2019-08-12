@@ -1,12 +1,11 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from flask_restful import Resource, Api
+
 db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
-    api = Api(app)
 
     app.config['SECRET_KEY']='thisismysecretkey'
     app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///db.sqlite3'
@@ -31,7 +30,6 @@ def create_app():
 if __name__ == '__main__':
     def main():
         app = create_app()
-        app.run(debug=config.debug)
         app.run(debug=True)
 
     main()
