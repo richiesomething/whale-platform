@@ -34,9 +34,12 @@ if __name__ == '__main__':
 
     main()
 
-#     def db_test_main():
-#         session = db.SqlAlchemySession()
-#         user = session.query(db.User).filter_by(id=1).first()
-#         session.commit()
-#         print(repr(user))
-#     db_test_main()
+    def db_test_main():
+        session = db.SqlAlchemySession()
+        user = session.query(db.User).filter_by(id=1).first()
+        session.commit()
+        print(repr(user))
+    db_test_main()
+
+
+    ##this is a test
