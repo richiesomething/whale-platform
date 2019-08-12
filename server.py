@@ -41,6 +41,3 @@ if __name__ == '__main__':
         print(repr(user))
     db_test_main()
 
-
-    ##this is a test
-    ##this is another test
