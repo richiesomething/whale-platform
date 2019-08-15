@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 
+{% block style %}
+{% endblock %}
+
 {% block title %}LOGIN{% endblock %}
 {% block header %}
-<h1 class="jumbotron">
-    ILINX <br> Login Page Header
-</h1>
+<p style="padding-left: 150px">Welcome back! Login and lets catch a whale!</p>
 {% endblock %}
 
 {% block body %}
 <br><br><br><br>
-<div class="column">
+<div class="column" align="center">
     <h3>Login</h3>
     <div class="box">
         {% with messages = get_flashed_messages() %}
