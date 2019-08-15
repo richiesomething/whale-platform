@@ -3,12 +3,45 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, current_user, logout_user
 from models import User
 from server import db
+import whale
 
 flask_app = Blueprint('flask_app', __name__)
 
 @flask_app.route('/')
 def index():
     return render_template('index.html')
+
+@flask_app.route('/', methods=['POST'])
+def signup_post2():
+    email = request.form.get('email')
+    name = request.form.get('name')
+    password = request.form.get('password')
+
+    user = User.query.filter_by(email=email).first()
+    if user:
+        flash('Email address already exists.')
+        return redirect(url_for('flask_app.signup'))
+
+    new_user = User(email=email, name=name, password=generate_password_hash(password, method='sha256'))
+    db.session.add(new_user)
+    db.session.commit()
+
+    return redirect(url_for('flask_app.login'))
+
+@flask_app.route('/login_post2f', methods=['POST'])
+def login_post2():
+    email=request.form.get('email')
+    password=request.form.get('password')
+    remember = True if request.form.get('remember') else False
+
+    user = User.query.filter_by(email=email).first()
+
+    if not user or not check_password_hash(user.password, password):
+        flash('Email or Password is incorrect')
+        return redirect(url_for('flask_app.login'))
+
+    login_user(user, remember=remember)
+    return redirect(url_for('flask_app.profile'))
 
 @flask_app.route('/profile')
 @login_required
@@ -60,3 +93,11 @@ def signup_post():
 def logout():
     logout_user()
     return redirect(url_for('flask_app.index'))
+
+@flask_app.route("/whale")
+def whale_page():
+    game_id = whale.game.id
+    room_id = whale.game.add_room()
+    player_id = whale.game.add_player(room_id)
+    return render_template("whale.html", game_id=game_id, room_id=room_id, player_id=player_id)
+

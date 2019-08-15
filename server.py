@@ -1,11 +1,14 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_cors import CORS
+import whale
 
 db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
+    CORS(app)
 
     app.config['SECRET_KEY']='thisismysecretkey'
     app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///db.sqlite3'
@@ -30,13 +33,8 @@ def create_app():
 if __name__ == '__main__':
     def main():
         app = create_app()
+        whale.init()
+        whale.route(flask_app=app)
         app.run(debug=True)
 
     main()
-
-    def db_test_main():
-        session = db.SqlAlchemySession()
-        user = session.query(db.User).filter_by(id=1).first()
-        session.commit()
-        print(repr(user))
-    db_test_main()

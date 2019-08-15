@@ -1,5 +1,11 @@
+git+https://github.com/jamonek/Robinhood
+redis
 flask
-flask_login
+flask-cors
+flask-login
+python-dateutil
+werkzeug
 sqlalchemy
 pymysql
+
 
